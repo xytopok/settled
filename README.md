@@ -24,9 +24,10 @@ Booking status history rather than Updating status of the booking in the same tr
 ### Instructions
 
 1. git clone https://github.com/xytopok/settled
-2. ./setup.sh
-3. npm install
-4. npm start
-5. (visit localhost:3000 to view frontend and interact)
+2. cd settled
+3. ./setup.sh
+4. npm install
+5. npm start
+6. (visit localhost:3000 to view frontend and interact)
 
 
