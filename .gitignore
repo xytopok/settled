@@ -1,0 +1,17 @@
+target
+node_modules
+.idea
+*.iml
+atlassian-ide-plugin.xml
+.project
+.classpath
+.settings
+.DS_Store
+*~
+release.properties
+*.ipr
+*.iws
+*.bak
+*.log
+zz_stuff.xml
+zz_stuff2.xml

@@ -1,0 +1,48 @@
+<h1>{{title}}</h1>
+<script>
+    //todo Move api access logic to client js
+    function sendMessage() {
+        const messageContent =  $('#message-content').val();
+        console.log("messageContent", messageContent);
+        axios.post('/conversations/1234/messages', { //todo change id
+            content: messageContent, //todo change content
+        }).then(function (response) {
+            console.log(response);
+            $('#message-content').val('');
+            setTimeout(retrieveMessages, 500);
+        })
+        .catch(function (error) {
+            $('#status-bar').text(error.message);
+        });
+
+    }
+
+    function retrieveMessages() {
+        axios.get('/conversations/1234/messages')
+        .then(function (response) {
+
+            var messages = response.data;
+            $('#conversation-content-panel').empty();
+            var cList = $('#conversation-content-panel');
+
+            $.each(messages, function(i)
+            {
+                var li = $('<li/>')
+                        .text(messages[i].content)
+                        .appendTo(cList);
+            });
+        })
+        .catch(function (error) {
+            $('#status-bar').text(error.message);
+        });
+    }
+
+    window.onload = retrieveMessages;
+</script>
+<h2>Messages</h2>
+<ul id="conversation-content-panel">
+
+</ul>
+<input id="message-content" type="text" name="message-content" title="Type in your message">
+<button onclick="sendMessage()" name="Send">Send</button>
+<div id="status-bar" class="text-error"></div>
