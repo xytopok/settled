@@ -1,8 +1,5 @@
-## Assumptions
 
-
-
-## Questions
+## Questions with answers
 
 ### An example stack of technologies which could be used for this system and the pros and cons of these technologies
 
